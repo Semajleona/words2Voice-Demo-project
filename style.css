@@ -1,0 +1,567 @@
+/* ==================================
+   WORDS2VOICE - COLOR PALETTE
+================================== */
+
+:root {
+    --coral: #FF6B6B;
+    --teal: #2EC4B6;
+    --yellow: #FFD166;
+    --orange: #FF9F68;
+    --cream: #FFF9F0;
+    --navy: #243047;
+    --white: #FFFFFF;
+}
+
+
+/* ==================================
+   GENERAL STYLING - ALL PAGES
+================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--navy);
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--navy);
+}
+
+button {
+    background-color: var(--coral);
+    color: var(--navy);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--orange);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 3px;
+}
+
+
+/* ==================================
+   HEADER - ALL DASHBOARD PAGES
+================================== */
+
+header {
+    background-color: var(--teal);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+header li a {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+header li a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==================================
+   FOOTER - ALL PAGES
+================================== */
+
+footer {
+    background-color: var(--teal);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+/* ==================================
+   FORMS - ALL PAGES
+================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #D5D5D5;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--white);
+    color: var(--navy);
+}
+
+input[type="file"] {
+    background-color: var(--cream);
+}
+
+form button {
+    margin-top: 15px;
+}
+
+
+/* ==================================
+   LOGIN PAGE
+================================== */
+
+body:has(.loginPage) {
+    align-items: center;
+}
+
+body:has(.loginPage)>h1 {
+    color: var(--navy);
+    font-size: 48px;
+    margin: 35px 0 15px;
+}
+
+body:has(.loginPage)>img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+body:has(.loginPage)>span {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px;
+}
+
+body:has(.loginPage)>p {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.loginPage {
+    background-color: var(--white);
+    width: 90%;
+    max-width: 400px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 25px 0 50px;
+}
+
+.loginPage>span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loginPage a {
+    color: #087F75;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+body:has(.loginPage) footer {
+    width: 100%;
+}
+
+
+/* ==================================
+   SIGN UP PAGE
+================================== */
+
+body:has(.signUpPage) {
+    align-items: center;
+}
+
+body:has(.signUpPage)>h1 {
+    font-size: 48px;
+    margin-top: 40px;
+}
+
+body:has(.signUpPage)>span {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+body:has(.signUpPage)>p {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.signUpPage {
+    background-color: var(--white);
+    padding: 35px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 20px;
+    margin: 30px 0 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+body:has(.signUpPage) footer {
+    width: 100%;
+}
+
+
+/* ==================================
+   HOME DASHBOARD
+================================== */
+
+body:has(.mainDashboard)>span {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+body:has(.mainDashboard)>p {
+    text-align: center;
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+.mainDashboard {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+}
+
+.mainDashboard>a {
+    display: block;
+    flex: 1 1 250px;
+    max-width: 330px;
+}
+
+.cardOne,
+.cardTwo {
+    min-height: 220px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.cardOne {
+    background-color: var(--yellow);
+}
+
+.cardTwo {
+    background-color: var(--orange);
+}
+
+.mainDashboard a:nth-of-type(2) .cardTwo {
+    background-color: var(--teal);
+}
+
+.cardOne:hover,
+.cardTwo:hover {
+    transform: translateY(-5px);
+}
+
+.cardOne h3,
+.cardTwo h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cardOne p,
+.cardTwo p {
+    font-size: 16px;
+}
+
+
+/* ==================================
+   WORD BANK PAGE
+================================== */
+
+body:has(.bank)>h2,
+body:has(.bank)>h3 {
+    text-align: center;
+}
+
+body:has(.bank)>h2 {
+    margin-top: 40px;
+}
+
+.Categories,
+.bank {
+    width: 90%;
+    max-width: 950px;
+    margin: 25px auto;
+}
+
+.presetCategories {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.presetCategories>span {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 25px 0 15px;
+}
+
+.categoryForm {
+    max-width: 500px;
+}
+
+.bank {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ==================================
+   SAVED WORD BANK CARDS
+================================== */
+
+.savedCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card1 {
+    background-color: var(--yellow);
+    width: 200px;
+    min-height: 220px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card1 img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.card1 h4 {
+    margin: 15px 0 5px;
+}
+
+
+/* ==================================
+   SENTENCE BUILDER
+================================== */
+
+.sentence-builder {
+    background-color: var(--cream);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 40px;
+    text-align: center;
+    border: 2px solid var(--teal);
+}
+
+#sentence-display {
+    background-color: var(--white);
+    border: 2px dashed var(--teal);
+    border-radius: 12px;
+    min-height: 100px;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 22px;
+}
+
+.sentence-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#speak-btn {
+    background-color: var(--teal);
+}
+
+#undo-btn {
+    background-color: var(--yellow);
+}
+
+#clear-btn {
+    background-color: var(--coral);
+}
+
+
+/* ==================================
+   MY ACCOUNT PAGE
+================================== */
+
+.account-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.my-profile {
+    background-color: var(--white);
+    max-width: 650px;
+    margin: 0 auto 50px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.my-profile h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.my-profile h3 {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--teal);
+}
+
+
+/* ==================================
+   RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    header ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .mainDashboard {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .mainDashboard>a {
+        width: 100%;
+        max-width: 350px;
+        flex: none;
+    }
+
+    .cardOne,
+    .cardTwo {
+        min-height: 180px;
+    }
+
+    .my-profile {
+        padding: 25px;
+    }
+
+    .bank,
+    .presetCategories {
+        padding: 20px;
+    }
+
+    .sentence-buttons {
+        flex-direction: column;
+    }
+
+    .sentence-buttons button {
+        width: 100%;
+    }
+}

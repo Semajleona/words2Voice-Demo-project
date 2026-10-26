@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Words2Voice</h1>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/bank">Bank</a></li>
+            <li><a href="/myAccount">My Account</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </header>
+
+    <h2>My Word Bank</h2>
+    <!--Categories-->
+
+    <h3>Categories</h3>
+
+    <section class="Categories">
+        <section class="presetCategories">
+            <option value="colors">Colors</option>
+            <option value="numbers">Numbers</option>
+            <option value="feelings">Feelings</option>
+            <option value="people">People</option>
+            <option value="phrases">Common phrases</option>
+            </ul>
+
+            <span>Create Category</span>
+
+            <form class="categoryForm">
+                <label for="Name-of-category">Category Name</label>
+                <input type="text" name="categoryName" class="categoryName" placeholder=" ie Animals">
+                <button type="submit">Add Category</button>
+            </form>
+        </section>
+    </section>
+
+    <!-- Create Words, phrases, pictures-->
+
+    <h3>Add Words Phrases & Pictures to Your bank</h3>
+
+    <section class="bank">
+
+        <form>
+            <label>Word/Phrase</label>
+            <input type="text" id="words" name="wordOrPhrase" required>
+
+            <select id="Categories" required>
+                <section class="Categories">
+                    <section class="presetCategories">
+                        <option value="colors">Colors</option>
+                        <option value="numbers">Numbers</option>
+                        <option value="feelings">Feelings</option>
+                        <option value="people">People</option>
+                        <option value="phrases">Common phrases</option>
+            </select>
+
+
+            <label for="pictures">Upload Pictures</label>
+            <input type="file" id="picture" name="picture" accept="image/*">
+
+
+            <button type="submit">Add to Bank!</button>
+        </form>
+
+
+        <!--saved cards-->
+        <section class="savedCards">
+            <div class="card1">
+                <img src=" ">
+                <h4> </h4>
+                <p> </p>
+            </div>
+
+            <div class="card1">
+                <img src=" ">
+                <h4> </h4>
+                <p> </p>
+            </div>
+
+            <div class="card1">
+                <img src=" ">
+                <h4> </h4>
+                <p> </p>
+            </div>
+
+        </section>
+
+
+
+        <!-- SENTENCE BUILDER -->
+        <section class="sentence-builder">
+
+            <h2>My Sentence</h2>
+            <div id="sentence-display" aria-live="polite">
+                <p>Displayed words </p>
+            </div>
+            <div class="sentence-buttons">
+                <button type="button" id="speak-btn"> Speak</button> <!--Feature if i can add voice record feature-->
+                <button type="button" id="undo-btn"> Undo</button>
+                <button type="button" id="clear-btn">Clear</button>
+            </div>
+
+        </section>
+
+    </section>
+    <footer>
+        <p>Words2Voice | Little Voices, Big Connections.</p>
+        <p>&copy; 2026 Words2Voice. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
