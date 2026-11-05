@@ -103,6 +103,25 @@ module.exports = function (app, db) {
         }
     })
 
+
+
+app.get('/bank/category/:category', (req, res) => {
+    const category = req.params.category
+
+    // Later, we'll retrieve the words saved
+    // under this category from MongoDB.
+
+    res.send(`Category: ${category}`)
+})
+
+
+
+
+
+
+
+
+    
     // SAVE ACCOUNT PROFILE
     app.post('/api/profile', async (req, res) => {
         try {
