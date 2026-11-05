@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // STATIC FILES
+// Temporary setup for your demo
 app.use(express.static(__dirname))
 
 // LOGIN PAGE
@@ -22,9 +23,9 @@ app.post('/login', (req, res) => {
     res.redirect('/home')
 })
 
-// HOME PAGE
+// MAIN DASHBOARD
 app.get('/home', (req, res) => {
-    res.sendFile(path.join(__dirname, 'home.html'))
+    res.sendFile(path.join(__dirname, 'maindashboard.html'))
 })
 
 // WORD BANK
@@ -40,6 +41,11 @@ app.get('/myAccount', (req, res) => {
 // SIGN UP
 app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, 'signup.html'))
+})
+
+// TEMPORARY DEMO LOGOUT
+app.get('/logout', (req, res) => {
+    res.redirect('/')
 })
 
 // API - GET CATEGORIES
@@ -66,4 +72,5 @@ app.get('/api/words', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Words2Voice running on port ${PORT}`)
 })
+
 
