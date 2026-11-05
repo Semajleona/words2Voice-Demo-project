@@ -1,4 +1,8 @@
-# words2Voice-Demo-project
+<img width="1536" height="1024" alt="Joyful Communication Through AAC Play" src="https://github.com/user-attachments/assets/015198bc-bf73-412a-a2ba-b20496f30fd0" />
+
+
+https://words2voice-demo-project.onrender.com
+
 A Communication App for Children With Developmental Disabilities
 
 About the Project
