@@ -1,33 +1,45 @@
+
 const express = require('express')
+const path = require('path')
 const app = express()
 
+const PORT = process.env.PORT || 8090
 
-app.use(express.static(__dirname))
+// MIDDLEWARE
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
+// STATIC FILES
+app.use(express.static(__dirname))
 
 // LOGIN PAGE
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(path.join(__dirname, 'index.html'))
+})
+
+// TEMPORARY DEMO LOGIN
+app.post('/login', (req, res) => {
+    res.redirect('/home')
 })
 
 // HOME PAGE
 app.get('/home', (req, res) => {
-    res.sendFile(__dirname + '/home.html')
+    res.sendFile(path.join(__dirname, 'home.html'))
 })
 
 // WORD BANK
 app.get('/bank', (req, res) => {
-    res.sendFile(__dirname + '/bank.html')
+    res.sendFile(path.join(__dirname, 'bank.html'))
 })
 
 // MY ACCOUNT
 app.get('/myAccount', (req, res) => {
-    res.sendFile(__dirname + '/myAccount.html')
+    res.sendFile(path.join(__dirname, 'myAccount.html'))
 })
 
 // SIGN UP
 app.get('/signup', (req, res) => {
-    res.sendFile(__dirname + '/signup.html')
+    res.sendFile(path.join(__dirname, 'signup.html'))
 })
 
 // API - GET CATEGORIES
@@ -51,6 +63,7 @@ app.get('/api/words', (req, res) => {
 })
 
 // START SERVER
-app.listen(8090, () => {
-    console.log('Words2Voice running on port 8080')
+app.listen(PORT, () => {
+    console.log(`Words2Voice running on port ${PORT}`)
 })
+
