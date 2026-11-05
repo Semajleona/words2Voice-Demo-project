@@ -1,56 +1,80 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
+    <title>Words2Voice | Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
         <h1>Words2Voice</h1>
-        <ul>
-            <li><a href="/bank">Bank</a></li>
-            <li><a href="/myAccount">My Account</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="/bank">Bank</a></li>
+                <li><a href="/myAccount">My Account</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <span>Create little words, build a big voice</span>
-    <p> Helping little ones communicate through pictures, words, and phrases.</p>
+    <!-- MAIN CONTENT -->
+    <main>
 
-    <section class="mainDashboard">
+        <span>Create little words, build a big voice</span>
 
-    <a href="/bank">
-        <div class="cardOne">
-            <h3>Add to Bank</h3>
-            <p>Add new words, pictures, and phrases.</p>
-        </div>
-    </a>
+        <p>
+            Helping little ones communicate through
+            pictures, words, and phrases.
+        </p>
 
-    <a href="/bank/sentence-builder">
-        <div class="cardTwo">
-            <h3>Sentence Builder</h3>
-            <p>Choose words to form a sentence.</p>
-        </div>
-    </a>
+        <!-- DASHBOARD CARDS -->
+        <section class="mainDashboard">
 
-    <a href="/bank/practice">
-        <div class="cardTwo">
-            <h3>Practice</h3>
-            <p>Practice pronouncing words and identifying pictures.</p>
-        </div>
-    </a>
+            <!-- ADD TO BANK -->
+            <a href="/bank">
+                <div class="cardOne">
+                    <h3>Add to Bank</h3>
+                    <p>Add new words, pictures, and phrases.</p>
+                </div>
+            </a>
 
-</section>
+            <!-- SENTENCE BUILDER -->
+            <a href="/bank/sentence-builder">
+                <div class="cardTwo">
+                    <h3>Sentence Builder</h3>
+                    <p>Choose words to form a sentence.</p>
+                </div>
+            </a>
 
+            <!-- PRACTICE -->
+            <a href="/bank/practice">
+                <div class="cardTwo">
+                    <h3>Practice</h3>
+                    <p>
+                        Practice pronouncing words
+                        and identifying pictures.
+                    </p>
+                </div>
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
         <p>Words2Voice | Little Voices, Big Connections.</p>
         <p>&copy; 2026 Words2Voice. All rights reserved.</p>
     </footer>
+
 </body>
 
 </html>
+
