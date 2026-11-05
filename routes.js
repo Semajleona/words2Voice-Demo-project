@@ -11,7 +11,7 @@ module.exports = function (app, db) {
 
     // HOME DASHBOARD
     app.get('/home', (req, res) => {
-        res.sendFile(path.join(__dirname, 'home.html'))
+        res.sendFile(path.join(__dirname, 'maindashboard.html')
     })
 
     // WORD BANK PAGE
