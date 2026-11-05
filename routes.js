@@ -4,6 +4,11 @@ const { ObjectId } = require('mongodb')
 
 module.exports = function (app, db) {
 
+    // TEMPORARY DEMO LOGIN
+    app.post('/login', (req, res) => {
+        res.redirect('/home')
+    })
+
     // HOME DASHBOARD
     app.get('/home', (req, res) => {
         res.sendFile(path.join(__dirname, 'home.html'))
@@ -19,12 +24,18 @@ module.exports = function (app, db) {
         res.sendFile(path.join(__dirname, 'myAccount.html'))
     })
 
+    // SIGN UP PAGE
+    app.get('/signup', (req, res) => {
+        res.sendFile(path.join(__dirname, 'signup.html'))
+    })
+
     // GET ALL WORDS
     app.get('/api/words', async (req, res) => {
         try {
             const words = await db.collection('words').find().toArray()
             res.json(words)
         } catch (err) {
+            console.log(err)
             res.status(500).send('Error loading words')
         }
     })
@@ -39,6 +50,7 @@ module.exports = function (app, db) {
 
             res.redirect('/bank')
         } catch (err) {
+            console.log(err)
             res.status(500).send('Error saving word')
         }
     })
@@ -58,6 +70,7 @@ module.exports = function (app, db) {
 
             res.redirect('/bank')
         } catch (err) {
+            console.log(err)
             res.status(500).send('Error editing word')
         }
     })
@@ -71,6 +84,7 @@ module.exports = function (app, db) {
 
             res.redirect('/bank')
         } catch (err) {
+            console.log(err)
             res.status(500).send('Error deleting word')
         }
     })
@@ -84,6 +98,7 @@ module.exports = function (app, db) {
 
             res.redirect('/bank')
         } catch (err) {
+            console.log(err)
             res.status(500).send('Error saving category')
         }
     })
@@ -102,8 +117,10 @@ module.exports = function (app, db) {
 
             res.redirect('/myAccount')
         } catch (err) {
+            console.log(err)
             res.status(500).send('Error saving profile')
         }
     })
 
 }
+
