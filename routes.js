@@ -4,10 +4,6 @@ const { ObjectId } = require('mongodb')
 
 module.exports = function (app, db) {
 
-    // TEMPORARY DEMO LOGIN
-    app.post('/login', (req, res) => {
-        res.redirect('/maindashboard.html')
-    })
 
     // HOME DASHBOARD
     app.get('/home', (req, res) => {
