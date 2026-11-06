@@ -1,4 +1,5 @@
-const client = new MongoClient(process.env.MONGODB_URI)
+
+
 const express = require('express')
 const { MongoClient } = require('mongodb')
 const path = require('path')
@@ -48,4 +49,3 @@ const PORT = process.env.PORT || 8080
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Words2Voice running on port ${PORT}`)
 })
-
