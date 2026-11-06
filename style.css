@@ -379,6 +379,12 @@ body:has(.bank)>h2 {
 
 }
 
+.presetCategories ul{
+list-style:none;
+
+
+   ]
+
 .presetCategories>span {
     display: block;
     font-size: 22px;
