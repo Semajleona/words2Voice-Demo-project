@@ -40,6 +40,19 @@ module.exports = function (app, db) {
         }
     })
 
+    // GET CATEGORIES
+app.get('/api/categories', async (req, res) => {
+    try {
+        const categories = await db.collection('categories').find().toArray()
+
+        res.json(categories)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send('Error loading categories')
+    }
+})
+
+
     // CREATE WORD OR PHRASE
     app.post('/api/words', async (req, res) => {
         try {
