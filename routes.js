@@ -10,7 +10,7 @@ app.post('/login', (req, res) => {
 })    
     // HOME DASHBOARD
     app.get('/home', (req, res) => {
-        res.sendFile(path.join(__dirname, 'maindashboard.html')
+        res.sendFile(path.join(__dirname, 'maindashboard.html'))
     })
 
     // WORD BANK PAGE
