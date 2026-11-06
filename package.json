@@ -1,5 +1,6 @@
-{
-  "name": "node-authentication",
+{"engines": {
+  "node": "20.x"
+}  "name": "node-authentication",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
