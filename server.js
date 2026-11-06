@@ -14,19 +14,22 @@ const client = new MongoClient(process.env.MONGODB_URI, {
     useUnifiedTopology: true
 })
 
-let db
 
 async function connectDB() {
     try {
         await client.connect()
         db = client.db('words2voice')
+
         console.log('MongoDB connected!')
+
     } catch (err) {
         console.log('MongoDB connection failed:', err.message)
     }
 }
 
 connectDB()
+require('./routes.js')(app, () => db)
+
 
 // PAGES
 app.get('/', (req, res) => {
