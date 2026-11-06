@@ -8,7 +8,6 @@ app.listen(PORT, '0.0.0.0', () => {
 const path = require('path')
 
 
-module.exports = function (app, db) {
 
 // LOGIN
 app.post('/login', (req, res) => {
