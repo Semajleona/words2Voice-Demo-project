@@ -4,7 +4,10 @@ const { ObjectId } = require('mongodb')
 
 module.exports = function (app, db) {
 
-
+// LOGIN
+app.post('/login', (req, res) => {
+    res.redirect('/home')
+})    
     // HOME DASHBOARD
     app.get('/home', (req, res) => {
         res.sendFile(path.join(__dirname, 'maindashboard.html')
