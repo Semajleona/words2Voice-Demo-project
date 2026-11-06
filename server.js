@@ -71,9 +71,9 @@ app.get('/api/words', (req, res) => {
     ])
 })
 
-// START SERVER
-app.listen(8090, () => {
-    console.log('Words2Voice running on port 8080')
-})
+const PORT = process.env.PORT || 8080
 
+app.listen(PORT, () => {
+    console.log(`Words2Voice running on port ${PORT}`)
+})
 
