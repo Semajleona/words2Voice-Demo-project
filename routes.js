@@ -1,6 +1,12 @@
+const { ObjectId } = require('mongodb');
 
+module.exports = function (app, passport, db) {
+const PORT = process.env.PORT || 8090;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`The magic happens on port ${PORT}`);
 const path = require('path')
-const { ObjectId } = require('mongodb')
+
 
 module.exports = function (app, db) {
 
