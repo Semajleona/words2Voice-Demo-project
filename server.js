@@ -1,4 +1,4 @@
-
+const client = new MongoClient(process.env.MONGODB_URI)
 const express = require('express')
 const { MongoClient } = require('mongodb')
 const path = require('path')
