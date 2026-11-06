@@ -1,16 +1,14 @@
+
 const path = require('path')
 const { ObjectId } = require('mongodb')
 
 module.exports = function (app, db) {
-    // Your routes go here
-}
 
+    // LOGIN - DEMO REDIRECT ONLY
+    app.post('/login', (req, res) => {
+        res.redirect('/home')
+    })
 
-
-// LOGIN
-app.post('/login', (req, res) => {
-    res.redirect('/home')
-})    
     // HOME DASHBOARD
     app.get('/home', (req, res) => {
         res.sendFile(path.join(__dirname, 'maindashboard.html'))
@@ -42,25 +40,30 @@ app.post('/login', (req, res) => {
         }
     })
 
-    // GET CATEGORIES
-app.get('/api/categories', async (req, res) => {
-    try {
-        const categories = await db.collection('categories').find().toArray()
-
-        res.json(categories)
-    } catch (err) {
-        console.log(err)
-        res.status(500).send('Error loading categories')
-    }
-})
-
+    // GET ALL CATEGORIES
+    app.get('/api/categories', async (req, res) => {
+        try {
+            const categories = await db.collection('categories').find().toArray()
+            res.json(categories)
+        } catch (err) {
+            console.log(err)
+            res.status(500).send('Error loading categories')
+        }
+    })
 
     // CREATE WORD OR PHRASE
     app.post('/api/words', async (req, res) => {
         try {
+            const wordOrPhrase = req.body.wordOrPhrase?.trim()
+            const category = req.body.category || req.body.Categories
+
+            if (!wordOrPhrase || !category) {
+                return res.status(400).send('Word and category required')
+            }
+
             await db.collection('words').insertOne({
-                wordOrPhrase: req.body.wordOrPhrase,
-                category: req.body.category
+                wordOrPhrase: wordOrPhrase,
+                category: category
             })
 
             res.redirect('/bank')
@@ -73,12 +76,23 @@ app.get('/api/categories', async (req, res) => {
     // UPDATE WORD OR PHRASE
     app.post('/api/words/edit', async (req, res) => {
         try {
+            const wordOrPhrase = req.body.wordOrPhrase?.trim()
+            const category = req.body.category || req.body.Categories
+
+            if (!ObjectId.isValid(req.body.id)) {
+                return res.status(400).send('Invalid word ID')
+            }
+
+            if (!wordOrPhrase || !category) {
+                return res.status(400).send('Word and category required')
+            }
+
             await db.collection('words').updateOne(
                 { _id: new ObjectId(req.body.id) },
                 {
                     $set: {
-                        wordOrPhrase: req.body.wordOrPhrase,
-                        category: req.body.category
+                        wordOrPhrase: wordOrPhrase,
+                        category: category
                     }
                 }
             )
@@ -93,6 +107,10 @@ app.get('/api/categories', async (req, res) => {
     // DELETE WORD OR PHRASE
     app.post('/api/words/delete', async (req, res) => {
         try {
+            if (!ObjectId.isValid(req.body.id)) {
+                return res.status(400).send('Invalid word ID')
+            }
+
             await db.collection('words').deleteOne({
                 _id: new ObjectId(req.body.id)
             })
@@ -107,8 +125,14 @@ app.get('/api/categories', async (req, res) => {
     // CREATE CATEGORY
     app.post('/api/categories', async (req, res) => {
         try {
+            const categoryName = req.body.categoryName?.trim()
+
+            if (!categoryName) {
+                return res.status(400).send('Category name required')
+            }
+
             await db.collection('categories').insertOne({
-                categoryName: req.body.categoryName
+                categoryName: categoryName
             })
 
             res.redirect('/bank')
@@ -118,25 +142,13 @@ app.get('/api/categories', async (req, res) => {
         }
     })
 
+    // VIEW CATEGORY
+    app.get('/bank/category/:category', (req, res) => {
+        const category = req.params.category
 
+        res.send(`Category: ${category}`)
+    })
 
-app.get('/bank/category/:category', (req, res) => {
-    const category = req.params.category
-
-    // Later, we'll retrieve the words saved
-    // under this category from MongoDB.
-
-    res.send(`Category: ${category}`)
-})
-
-
-
-
-
-
-
-
-    
     // SAVE ACCOUNT PROFILE
     app.post('/api/profile', async (req, res) => {
         try {
@@ -157,4 +169,5 @@ app.get('/bank/category/:category', (req, res) => {
     })
 
 }
+
 
