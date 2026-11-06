@@ -6,7 +6,7 @@ module.exports = function (app, db) {
 
     // TEMPORARY DEMO LOGIN
     app.post('/login', (req, res) => {
-        res.redirect('/home')
+        res.redirect('/maindashboard.html')
     })
 
     // HOME DASHBOARD
