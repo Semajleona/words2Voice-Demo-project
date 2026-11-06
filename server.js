@@ -1,8 +1,12 @@
 const express = require('express')
+const { MongoClient } = require('mongodb')
+require('dotenv').config()
+
 const app = express()
 
 app.use(express.static('public'))
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 const client = new MongoClient(process.env.MONGODB_URI)
 
@@ -17,6 +21,8 @@ async function connectDB() {
         console.log('MongoDB connection failed:', err.message)
     }
 }
+
+connectDB()
 
 connectDB()
 
