@@ -1,7 +1,11 @@
-{"engines": {
-  "node": "20.x"
-}  "name": "node-authentication",
+
+{
+  "name": "node-authentication",
+  "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "start": "node server.js"
   },
@@ -28,4 +32,3 @@
     "passport-twitter": "^0.1.5"
   }
 }
-
