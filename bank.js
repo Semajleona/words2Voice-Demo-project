@@ -23,10 +23,10 @@ fetch('/api/words')
     .then(words => {
         words.forEach(item => {
             const button = document.createElement('button')
-            button.textContent = item.word
+            button.textContent = item.wordOrPhrase
 
             button.addEventListener('click', () => {
-                sentence.push(item.word)
+                sentence.push(item.wordOrPhrase)
                 showSentence()
             })
 
