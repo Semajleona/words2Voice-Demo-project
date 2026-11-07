@@ -435,7 +435,7 @@ list-style:none;
 .card1 h4 {
     margin: 15px 0 5px;
 }
-.mysavedwords{
+.mysavedwords h3{
    font-size: 30px;
    font-weight: 600;
    text-transform:capitalize; 
