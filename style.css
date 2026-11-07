@@ -408,13 +408,7 @@ list-style:none;
    SAVED WORD BANK CARDS
 ================================== */
 
-.savedCards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
-}
+
 
 .card1 {
     background-color: var(--yellow);
