@@ -435,7 +435,15 @@ list-style:none;
 .card1 h4 {
     margin: 15px 0 5px;
 }
+.mysavedwords{
+   font-size: 30px;
+   font-weight: 600;
+   text-transform:capitalize; 
+   text-align: center;
+   font-color: navy;
 
+   
+}
 
 /* ==================================
    SENTENCE BUILDER
